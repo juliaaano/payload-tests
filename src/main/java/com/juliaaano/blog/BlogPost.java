@@ -2,9 +2,11 @@ package com.juliaaano.blog;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.List;
 
+@XmlRootElement
 @JsonIgnoreProperties(ignoreUnknown = true, value = {"extraObjectProperty"})
 public class BlogPost {
 

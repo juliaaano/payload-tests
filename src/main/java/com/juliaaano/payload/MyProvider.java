@@ -27,7 +27,7 @@ public class MyProvider implements JsonProviderFactory {
 
             @Override
             public String toString() {
-                return "hello";
+                return "net.sf.flexjson";
             }
         });
     }

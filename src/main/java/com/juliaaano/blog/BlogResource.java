@@ -57,8 +57,6 @@ public class BlogResource implements ResourceBuilder {
         final Payload<BlogPost> payload =
                 MediaType.of(request.contentType()).payload().newInstance(request.body(), BlogPost.class);
 
-        JSON.payload().newInstance(new BlogPost());
-
         logger.info("New payload: {}", payload);
 
         payload.get().setIdentifier(randomUUID().toString());
