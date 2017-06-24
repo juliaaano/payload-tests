@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: payload-tests-deployment
+spec:
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: payload-tests
+    spec:
+      containers:
+      - name: payload-tests
+        image: juliaaano/payload-tests:1.0.0
+        ports:
+        - containerPort: 8000
+        volumeMounts:
+        - name: app-logs
+          mountPath: /app/logs
+      volumes:
+      - name: app-logs
+        emptyDir: {}
