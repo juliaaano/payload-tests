@@ -1,0 +1,11 @@
+FROM openjdk:8-jre-alpine
+
+COPY target/app-*.jar app/app.jar
+
+WORKDIR /app
+
+VOLUME /app/logs
+
+EXPOSE 8000
+
+CMD ["java", "-jar", "app.jar"]
