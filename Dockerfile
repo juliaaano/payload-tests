@@ -3,7 +3,7 @@ FROM maven:3 as builder
 
 COPY ./ ./build
 
-RUN mvn -q -f build clean package -DskipTests \
+RUN mvn --quiet --file build/pom.xml clean package -DskipTests \
 	&& mkdir app \
 	&& mv build/target/app-*.jar app/app.jar \
 	&& rm -rf build
@@ -21,3 +21,4 @@ VOLUME /app/logs
 EXPOSE 8000
 
 CMD ["java", "-jar", "app.jar"]
+
